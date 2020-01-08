@@ -1,0 +1,389 @@
+Package: ChinaDNS
+Version: 1.3.3-1
+Depends: libc
+License: GPLv3
+Section: net
+Architecture: mips_24kc
+Installed-Size: 36180
+Filename: ChinaDNS_1.3.3-1_mips_24kc.ipk
+Size: 35759
+SHA256sum: 6f24bac705455b1332455291f6023924c2a6e158f7e6e26ce7fdaf7b8327e55e
+Description:  Protect yourself against DNS poisoning in China.
+
+Package: dns-forwarder
+Version: 1.2.1-2
+Depends: libc
+License: GPLv3
+Section: net
+Architecture: mips_24kc
+Installed-Size: 8821
+Filename: dns-forwarder_1.2.1-2_mips_24kc.ipk
+Size: 9598
+SHA256sum: 1e267500f22ce7ec3446827058e268cee3d9c1b37b4b39ddebe0d197b728177b
+Description:  Forwarding DNS queries on TCP transport.
+
+Package: libmbedtls12
+Version: 2.16.3-1
+Depends: libc
+Provides: libmbedtls
+License: GPL-2.0+
+Section: libs
+Architecture: mips_24kc
+Installed-Size: 177308
+Filename: libmbedtls12_2.16.3-1_mips_24kc.ipk
+Size: 177631
+SHA256sum: 7113e6e7cb42ddcd07c2cbf4063cd4bf9bed8f0ec49eb73b7ecc2b3bca4d99e0
+Description:  The aim of the mbedtls project is to provide a quality, open-source
+ cryptographic library written in C and targeted at embedded systems.
+ This package contains the mbedtls library.
+
+Package: libopenssl-conf
+Version: 1.1.1d-2
+Depends: libc, libopenssl1.1
+License: OpenSSL
+Section: libs
+Architecture: mips_24kc
+Installed-Size: 4550
+Filename: libopenssl-conf_1.1.1d-2_mips_24kc.ipk
+Size: 5496
+SHA256sum: fd22df6f4054b33aff63028f5cb527ad940a3ebae43d9a418ac26e67153fba61
+Description:  The OpenSSL Project is a collaborative effort to develop a robust,
+ commercial-grade, full-featured, and Open Source toolkit implementing the
+ Transport Layer Security (TLS) protocol as well as a full-strength
+ general-purpose cryptography library.
+ This package installs the OpenSSL configuration file /etc/ssl/openssl.cnf.
+
+Package: libopenssl-devcrypto
+Version: 1.1.1d-2
+Depends: libc, libopenssl1.1, kmod-cryptodev, libopenssl-conf
+License: OpenSSL
+Section: libs
+Architecture: mips_24kc
+Installed-Size: 7727
+Filename: libopenssl-devcrypto_1.1.1d-2_mips_24kc.ipk
+Size: 8682
+SHA256sum: 2cb74e477f2178fd072d46e23402f351c839ea3e865ac01745611d2afbbf45ec
+Description:  This package adds an engine that enables hardware acceleration
+ through the /dev/crypto kernel interface.
+ To use it, you need to configure the engine in /etc/ssl/openssl.cnf
+ See https://www.openssl.org/docs/man1.1.1/man5/config.html#Engine-Configuration-Module
+ and https://openwrt.org/docs/techref/hardware/cryptographic.hardware.accelerators
+ The engine_id is "devcrypto"
+
+Package: libopenssl1.1
+Version: 1.1.1d-2
+Depends: libc
+Provides: libopenssl
+License: OpenSSL
+Section: libs
+Architecture: mips_24kc
+Installed-Size: 1003765
+Filename: libopenssl1.1_1.1.1d-2_mips_24kc.ipk
+Size: 992919
+SHA256sum: 4cc443529052eea310a7622af98cb12498d162777bf7382c96ff1a8fa715d698
+Description:  The OpenSSL Project is a collaborative effort to develop a robust,
+ commercial-grade, full-featured, and Open Source toolkit implementing the
+ Transport Layer Security (TLS) protocol as well as a full-strength
+ general-purpose cryptography library.
+ This package contains the OpenSSL shared libraries, needed by other programs.
+
+Package: luci-app-chinadns
+Version: 1.6.2-1
+Depends: libc, ChinaDNS
+License: GPLv3
+Section: luci
+Architecture: all
+Installed-Size: 1643
+Filename: luci-app-chinadns_1.6.2-1_all.ipk
+Size: 2531
+SHA256sum: fd2a27b9011de5cc4ed5e3df18788018df963d367150e5a722c12fc295c5065c
+Description:  LuCI Support for ChinaDNS.
+
+Package: luci-app-dns-forwarder
+Version: 1.6.2-1
+Depends: libc, dns-forwarder
+License: GPLv3
+Section: luci
+Architecture: all
+Installed-Size: 1349
+Filename: luci-app-dns-forwarder_1.6.2-1_all.ipk
+Size: 2254
+SHA256sum: d2ce3a82efd1c75612c2bcf489b837070493b3054db4647f81c2a2db07d0d6e6
+Description:  LuCI Support for Dns-Forwarder.
+
+Package: luci-app-openclash
+Version: 0.36.1-beta
+Depends: libc, iptables, dnsmasq-full, coreutils, coreutils-nohup, bash, wget
+Section: opt
+Architecture: all
+Installed-Size: 2627106
+Filename: luci-app-openclash_0.36.1-beta_all.ipk
+Size: 2450009
+SHA256sum: 4b8cb9068cba999c97bcd08ba0b47c7392a6dbef84a86023c244bb5cea7e8984
+Description:  A LuCI support for clash
+
+Package: luci-app-redsocks2
+Version: 1.6.2-1
+Depends: libc, redsocks2
+License: GPLv3
+Section: luci
+Architecture: all
+Installed-Size: 1529
+Filename: luci-app-redsocks2_1.6.2-1_all.ipk
+Size: 2414
+SHA256sum: 5d138e6821995526a1bca1287ab65586709a34cb61b67caa6682c06c364594f5
+Description:  LuCI Support for RedSocks2.
+
+Package: luci-app-shadowsocks-without-ipset
+Version: 1.9.1-1
+Depends: libc, iptables
+License: GPLv3
+Section: luci
+Architecture: all
+Installed-Size: 10293
+Filename: luci-app-shadowsocks-without-ipset_1.9.1-1_all.ipk
+Size: 11225
+SHA256sum: cbc52036a54c7babf3ca8d03d5cc20d171f8ce774b05db1b0eaa41f74043770c
+Description:  LuCI Support for shadowsocks-libev.
+
+Package: luci-app-shadowsocks
+Version: 1.9.1-1
+Depends: libc, iptables, ipset
+License: GPLv3
+Section: luci
+Architecture: all
+Installed-Size: 10412
+Filename: luci-app-shadowsocks_1.9.1-1_all.ipk
+Size: 11336
+SHA256sum: bdbcea695bbce07a45c1810ba23ee5691826702231776a2ddbc0f7aff3a9de6a
+Description:  LuCI Support for shadowsocks-libev.
+
+Package: luci-app-shadowvpn
+Version: 1.6.2-1
+Depends: libc, ShadowVPN
+License: GPLv3
+Section: luci
+Architecture: all
+Installed-Size: 1806
+Filename: luci-app-shadowvpn_1.6.2-1_all.ipk
+Size: 2692
+SHA256sum: 9ad42755555f523475b3ecc9aacb16d628aa82fa443561b8410439b929c2ab66
+Description:  LuCI Support for ShadowVPN.
+
+Package: luci-app-smartdns
+Version: 1.2019.28-1
+Depends: libc, luci-compat, smartdns
+License: GPL-3.0-or-later
+Section: luci
+Architecture: all
+Installed-Size: 5209
+Filename: luci-app-smartdns_1.2019.28-1_all.ipk
+Size: 5988
+SHA256sum: 8a770f369b2447ff4a40eae44c3de3f8be6f10771e49fdbc2a07ee573bd1a7fc
+Description:  Provides Luci for smartdns
+
+Package: luci-app-v2ray
+Version: 1.5.2-1
+Depends: libc, jshn, luci-lib-jsonc, ip, ipset, iptables, iptables-mod-tproxy, resolveip, dnsmasq-full
+License: MIT
+Section: luci
+Architecture: all
+Installed-Size: 84319
+Filename: luci-app-v2ray_1.5.2-1_all.ipk
+Size: 84259
+SHA256sum: a6f3b1999c01079d1673ea7073f5fad6c0669e2a7a3d8a7bfb23ea6a2f30de8d
+Description:  LuCI support for V2Ray
+
+Package: luci-app-vlmcsd
+Version: 1.0.1-1
+Depends: libc, vlmcsd
+License: MIT
+Section: luci
+Architecture: all
+Installed-Size: 1627
+Filename: luci-app-vlmcsd_1.0.1-1_all.ipk
+Size: 2475
+SHA256sum: 3648ca7ca323ccb663d25cb3e60f1f87ceda90f54fc3d23c0f9ab0a86845a380
+Description:  This package contains LuCI configuration pages for openwrt-vlmcsd.
+
+Package: luci-i18n-smartdns-zh-cn
+Version: 1.2019.28-1
+Depends: libc, luci-app-smartdns
+License: GPL-3.0-or-later
+Section: luci
+Architecture: all
+Installed-Size: 2980
+Filename: luci-i18n-smartdns-zh-cn_1.2019.28-1_all.ipk
+Size: 3792
+SHA256sum: 1ba07af3a6f6332e8bc78cde04b6ba81ef7740949aebd558924847da7dcecf47
+Description:  Translation for luci-app-smartdns - 中文 (Chinese)
+
+Package: luci-i18n-v2ray-zh-cn
+Version: 1.5.2-1
+Depends: libc, luci-app-v2ray
+License: MIT
+Section: luci
+Architecture: all
+Installed-Size: 5944
+Filename: luci-i18n-v2ray-zh-cn_1.5.2-1_all.ipk
+Size: 6751
+SHA256sum: 65a56819f8ddba99894806414e8e8652596ece4fedd3f03c1e89ae967b9d0bd4
+Description:  Translation for luci-app-v2ray - 中文 (Chinese)
+
+Package: mbedtls-util
+Version: 2.16.3-1
+Depends: libc, libmbedtls12
+License: GPL-2.0+
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 6894
+Filename: mbedtls-util_2.16.3-1_mips_24kc.ipk
+Size: 7751
+SHA256sum: 6dc77e806a03abc0c7fea606548c36fe145234bc92431718d9f78e83ad773333
+Description:  The aim of the mbedtls project is to provide a quality, open-source
+ cryptographic library written in C and targeted at embedded systems.
+ This package contains mbedtls helper programs for private key and
+ CSR generation (gen_key, cert_req)
+
+Package: openssl-util
+Version: 1.1.1d-2
+Depends: libc, libopenssl1.1, libopenssl-conf
+License: OpenSSL
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 241178
+Filename: openssl-util_1.1.1d-2_mips_24kc.ipk
+Size: 239242
+SHA256sum: 89fc48f989e4e5f97c604b5c3bf1e6defbce775dbb17f867f6b0839af53e58f8
+Description:  The OpenSSL Project is a collaborative effort to develop a robust,
+ commercial-grade, full-featured, and Open Source toolkit implementing the
+ Transport Layer Security (TLS) protocol as well as a full-strength
+ general-purpose cryptography library.
+ This package contains the OpenSSL command-line utility.
+
+Package: shadowsocks-libev-server
+Version: 3.3.3-1
+Depends: libc, libpthread, libev, libpcre, libcares, libsodium, libmbedtls12
+License: GPLv3
+Section: net
+Architecture: mips_24kc
+Installed-Size: 60822
+Filename: shadowsocks-libev-server_3.3.3-1_mips_24kc.ipk
+Size: 61100
+SHA256sum: ec23d256530bceeafa7ed0c4da2b2da1b6e27f6612b514dba22f411675765f7d
+Description:  Shadowsocks-libev is a lightweight secured socks5 proxy for embedded devices and low end boxes.
+
+Package: shadowsocks-libev
+Version: 3.3.3-1
+Depends: libc, libpthread, libev, libpcre, libcares, libsodium, libmbedtls12
+License: GPLv3
+Section: net
+Architecture: mips_24kc
+Installed-Size: 156296
+Filename: shadowsocks-libev_3.3.3-1_mips_24kc.ipk
+Size: 155515
+SHA256sum: 0b601b9f47b1195f1787699ade06b991ba26ee9f5cbdfafcb317d6fa4c648d5d
+Description:  Shadowsocks-libev is a lightweight secured socks5 proxy for embedded devices and low end boxes.
+
+Package: simple-obfs-server
+Version: 0.0.5-4
+Depends: libc, libpthread, libev
+License: GPLv3
+Section: net
+Architecture: mips_24kc
+Installed-Size: 29318
+Filename: simple-obfs-server_0.0.5-4_mips_24kc.ipk
+Size: 29783
+SHA256sum: 94d83f75ef21fd1814ff287c2d4c7cb6bf073bdee204bcb5fb65d731c80e3096
+Description:  Simple-obfs is a simple obfusacting tool, designed as plugin server of shadowsocks.
+
+Package: simple-obfs
+Version: 0.0.5-4
+Depends: libc, libpthread, libev
+License: GPLv3
+Section: net
+Architecture: mips_24kc
+Installed-Size: 27585
+Filename: simple-obfs_0.0.5-4_mips_24kc.ipk
+Size: 28151
+SHA256sum: bfbee586e9bda720f97130d2a83fabd23336af45fc5b1e45b3cf9e2eb22f1db8
+Description:  Simple-obfs is a simple obfusacting tool, designed as plugin server of shadowsocks.
+
+Package: smartdns
+Version: 1.2019.28-1
+Depends: libc, libpthread, libopenssl1.1
+License: GPL-3.0-or-later
+Section: net
+Architecture: mips_24kc
+Installed-Size: 62743
+Filename: smartdns_1.2019.28-1_mips_24kc.ipk
+Size: 63509
+SHA256sum: 1d9b90761258e05a1214db915dd8fcfbd0bddea6fb8bccd916d5f0c60b2f0b05
+Description:  SmartDNS is a local DNS server which accepts DNS query requests from local network clients,
+ get DNS query results from multiple upstream DNS servers concurrently, and returns the fastest IP to clients.
+ Unlike dnsmasq's all-servers, smartdns returns the fastest IP. 
+
+Package: v2ray-core
+Version: 4.22.1-1
+Depends: libc, ca-bundle
+License: MIT
+Section: net
+Architecture: mips_24kc
+Installed-Size: 13060633
+Filename: v2ray-core_4.22.1-1_mips_24kc.ipk
+Size: 12972328
+SHA256sum: d5a4f6336396ef386d6da15de6c6cf9b871201b5fe3a27e45d30571bb8b82457
+Description:  Project V is a set of network tools that help you to build your own computer network.
+ It secures your network connections and thus protects your privacy.
+ 
+ This package contains v2ray, v2ctl and v2ray-assets.
+
+Package: v2ray-plugin
+Version: 1.2.0-20191007
+Depends: libc
+Section: net
+Architecture: mips_24kc
+Installed-Size: 3381863
+Filename: v2ray-plugin_1.2.0-20191007_mips_24kc.ipk
+Size: 3383202
+SHA256sum: 3f3c8c9dd798154293f2023e15e8c8c228a3cd52578ba2c26932abe85aab7d3a
+Description:  Yet another SIP003 plugin for shadowsocks, based on v2ray
+
+Package: vlmcsd
+Version: svn1112-1
+Depends: libc, libpthread
+License: MIT
+Section: net
+Architecture: mips_24kc
+Installed-Size: 49963
+Filename: vlmcsd_svn1112-1_mips_24kc.ipk
+Size: 50656
+SHA256sum: fd810f6f496b37b0e727ef23d905d3a63e15e4465aa0d68c0a7e43552fe1e908
+Description:  vlmcsd is a KMS Emulator in C.
+
+Package: zlib-dev
+Version: 1.2.11-3
+Depends: libc, zlib
+License: Zlib
+Section: devel
+Architecture: mips_24kc
+Installed-Size: 77500
+Filename: zlib-dev_1.2.11-3_mips_24kc.ipk
+Size: 78209
+SHA256sum: 0e5f95d3030a08a644eb782d065636a3d5e893cd0d2f557ff344c6da1dc4ce67
+Description:  zlib is a lossless data-compression library.
+ This package includes the development support files.
+
+Package: zlib
+Version: 1.2.11-3
+Depends: libc
+License: Zlib
+Section: libs
+Architecture: mips_24kc
+Installed-Size: 37848
+Filename: zlib_1.2.11-3_mips_24kc.ipk
+Size: 38582
+SHA256sum: 35fdd81fe59da14ce02e4cfebd604a80f0aa62317f0a1b99062dc9f4288f0313
+Description:  zlib is a lossless data-compression library.
+ This package includes the shared library.
+
